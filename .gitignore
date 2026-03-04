@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.idea/
+walkthrough/phase1/outputs/
+.DS_Store
