@@ -28,6 +28,17 @@ python demos/run_phase1_flow.py --only-step 8
 python demos/run_phase1_flow.py --include-optional
 ```
 
+If you want a local interactive UI (corpus + parameter controls) across Step 0 -> Step 11:
+
+```bash
+streamlit run demos/app_phase1_playground.py
+```
+
+Use `Example corpus` in the sidebar for quick classroom-ready datasets.
+
+`Preset` controls model/training defaults (speed vs quality) and `Random seed` controls reproducibility.
+Use the `Seed Compare` tab to show how two seeds can produce different loss curves and generated outputs.
+
 To open the Step 3 plot interactively:
 
 ```bash
