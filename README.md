@@ -24,6 +24,7 @@ mini-gpt-pytorch/
 │   ├── vector_db.py
 │   └── __init__.py
 ├── demos/
+│   ├── app_phase1_playground.py
 │   ├── run_full_demo.py
 │   ├── run_generation.py
 │   └── run_phase1_flow.py
@@ -93,6 +94,38 @@ Useful flags:
 python demos/run_phase1_flow.py --only-step 8
 python demos/run_phase1_flow.py --include-optional
 ```
+
+### 4) Local interactive UI playground (Step 0 -> Step 11 teaching flow)
+
+```bash
+streamlit run demos/app_phase1_playground.py
+```
+
+You can tune corpus text and key parameters (embedding size, context window, heads, layers, block size, epochs, learning rate), then inspect:
+
+- tokenization/vocabulary basics (Step 0-1)
+- retrieval memory + mini agent answers (Step 4-6)
+- masked attention explorer (Step 7)
+- 2D embedding visualization (PCA)
+- cosine-similarity heatmap
+- embedding training loss
+- mini GPT training loss
+- generated text and attention heatmap
+
+Tip:
+- Use sidebar `Example corpus` + `Load selected example` for ready-to-teach datasets.
+- `Preset` controls the default training budget/model size:
+  - `Quick Demo`: fastest, rough outputs
+  - `Balanced`: good speed/quality balance
+  - `Deep Dive`: slower, usually better stability/quality
+- `Random seed` controls reproducibility:
+  - same seed + same settings -> similar outputs
+  - different seed -> different loss path and generated text variation
+- `Seed Compare` tab lets you run two seeds side-by-side to show this effect.
+
+Note:
+- `watchdog` is optional (performance only).
+- This repo includes `.streamlit/config.toml` with `fileWatcherType=\"none\"` to avoid known Streamlit + PyTorch watcher warnings.
 
 Interactive visualization for Step 3:
 

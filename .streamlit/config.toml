@@ -1,0 +1,6 @@
+[server]
+# Avoid Streamlit watcher issues with torch module inspection.
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
